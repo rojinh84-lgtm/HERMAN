@@ -274,7 +274,7 @@ header {
     background-color: #D8C9A8;
     padding: 10px 25px;
     cursor: pointer;
-    transition: background-color 0.3s transfom 0.3;
+    transition: background-color 0.3s, transfom 0.3;
 }
 .Hero button:hover{
     background-color: #686148;
@@ -285,7 +285,7 @@ header {
 .banner2 {
     position: relative;
     width: 50%;
-    height: (300px, 30vw, 420px);
+    height: clamp(300px, 30vw, 420px);
     border-radius: 20px;
     padding: 30px 40px;
     display: flex;
