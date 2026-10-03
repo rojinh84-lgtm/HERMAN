@@ -12,8 +12,9 @@
 <body>
     <header>
         <nav class="info-nav">
-           🎁 با خرید ۲ محصول یکی هدیه بگیر 🎁
+        🎁 با خرید ۲ محصول یکی هدیه بگیر 🎁
         </nav>
+
         <div class="logo-container">
             <a href="#" class="logo">
                 <svg viewBox="0 0 100 70" class="logo-mark" xmlns="http://www.w3.org/2000/svg">
@@ -26,38 +27,42 @@
                     <span class="logo-sub">GEAR FOR A WILDER LIFE</span>
                 </span>
             </a>
-        <div class="search">
 
-            <input type="text" placeholder="جستجو محصول..." id="search-box">
-            <button class="search-btn" aria-label="جستجو">
-                <svg width="16" height="16" viewBox="0 0 24 24">
-                    <circle cx="11" cy="11" r="7"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"/>
-                    <line x1="16.5" y1="16.5" x2="22" y2="22"
-                        stroke="currentColor"
-                        stroke-width="2"/>
-                </svg>
-            </button>
-            
-        </div>
-        <div>
-            <button class="cart">
-                <span class="btn-text">سبد خرید</span> 
-                <span class="btn-icon">🛒</span> 
-                <span class="cart-count">2 </span>
-            </button>
-        </div>
-    </div>
-    <input type="checkbox" id="mobile-menu-toggle" class="menu-toggle-checkbox">
-    <label for="mobile-menu-toggle" class="hamburger-btn" aria-label="باز کردن منو">
-        <svg viewBox="0 0 24 24" fill="currentColor">
-            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
-        </svg>
-    </label>
-    <nav class="main-nav">
-    <div class="dropdown-container">
+            <div class="search">
+                <input type="text" placeholder="جستجو محصول..." id="search-box">
+                <button class="search-btn" aria-label="جستجو">
+                    <svg width="16" height="16" viewBox="0 0 24 24">
+                        <circle cx="11" cy="11" r="7"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"/>
+                        <line x1="16.5" y1="16.5" x2="22" y2="22"
+                            stroke="currentColor"
+                            stroke-width="2"/>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="header-actions">
+                <button class="cart">
+                    <span class="btn-text">سبد خرید</span> 
+                    <span class="btn-icon">🛒</span> 
+                    <span class="cart-count">2</span>
+                </button>
+
+                <label for="mobile-menu-toggle" class="hamburger-btn" aria-label="باز کردن منو">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </label>
+            </div>
+        </div> <!-- این خط خیلی مهمه: بسته شدن logo-container -->
+
+        <!-- چک‌باکس اینجا -->
+        <input type="checkbox" id="mobile-menu-toggle" class="menu-toggle-checkbox">
+
+        <nav class="main-nav">
+            <div class="dropdown-container">
                 <a href="#" class="dropdown-trigger">
                     <svg viewBox="0 0 32 32" fill="none">
                         <rect x="5" y="5" width="8" height="8" rx="1.8" stroke="currentColor" stroke-width="2"/>
@@ -67,20 +72,20 @@
                     </svg>
                     همه دسته ها
                 </a>
-        <ul class="dropdown-menu">
-            <li><a href="#tents">چادر</a></li>
-            <li><a href="#sleeping-bags">کیسه خواب</a></li>
-            <li><a href="#fire-gear">لوازم آتش</a></li>
-            <li><a href="#climbing-shoes">کفش کوهنوردی</a></li>
-        </ul>
-    </div>
-    
-    <a href="#">پیشنهاد ویژه</a>
-    <a href="#">کیسه خواب</a>
-    <a href="#">لوازم آتش</a>
-    <a href="#">چادر</a>
-    <a href="#">تماس با ما</a>
-</nav>   
+                <ul class="dropdown-menu">
+                    <li><a href="#tents">چادر</a></li>
+                    <li><a href="#sleeping-bags">کیسه خواب</a></li>
+                    <li><a href="#fire-gear">لوازم آتش</a></li>
+                    <li><a href="#climbing-shoes">کفش کوهنوردی</a></li>
+                </ul>
+            </div>
+            
+            <a href="#">پیشنهاد ویژه</a>
+            <a href="#">کیسه خواب</a>
+            <a href="#">لوازم آتش</a>
+            <a href="#">چادر</a>
+            <a href="#">تماس با ما</a>
+        </nav>   
     </header>
     
     <section class="Hero">

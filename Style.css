@@ -234,72 +234,123 @@ header {
 @media (max-width: 768px) {
 
     .logo-container {
-        padding: 15px 20px;
-        gap: 15px;
+        padding: 12px 16px;
+        gap: 12px;
     }
+
+    .logo-text {
+        font-size: 18px;
+    }
+
+    .logo-mark {
+        width: 56px;
+        height: 40px;
+    }
+
     #search-box {
-        display: none; 
+        display: none;
     }
+
     .search {
-        width: auto; 
+        width: auto;
         flex-grow: 0;
     }
+
     .search-btn {
-        position: static; 
-        transform: none; 
-        background-color: #f1c40f; 
+        position: static;
+        transform: none;
+        background-color: #f1c40f;
         color: #4F5B2A;
-        border-radius: 50%; 
+        border-radius: 50%;
         width: 40px;
         height: 40px;
     }
+
     .cart .btn-text,
     .cart .cart-count {
-        display: none; 
+        display: none;
     }
+
     .cart {
         width: 40px;
         height: 40px;
         padding: 0;
         border-radius: 50%;
+        min-width: 40px;
+    }
+
+    .hamburger-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .main-nav {
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+        padding: 0;
+        background-color: #D8C9A8;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        z-index: 999;
+    }
+
+    .main-nav a,
+    .dropdown-trigger {
+        width: 100%;
+        padding: 16px 24px;
+        border-bottom: 1px solid rgba(47, 58, 38, 0.12);
+        box-sizing: border-box;
+        justify-content: flex-start;
+    }
+
+    .dropdown-menu {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        box-shadow: none;
+        background-color: #c9be9a;
+        border-radius: 0;
+        display: none;
+    }
+
+
+    .menu-toggle-checkbox:checked ~ .main-nav {
+        display: flex;
+        animation: slideDown 0.3s ease forwards;
     }
 
     .Hero {
         flex-direction: column;
+        margin: 12px 8px 24px;
+        gap: 12px;
     }
+
     .banner1,
     .banner2 {
         width: 100%;
-        height: 300px;
+        height: 260px;
+        padding: 24px 20px;
     }
 
     .banners {
         flex-direction: column;
+        gap: 12px;
     }
 
-    .hamburger-btn {
-        display: block; 
+    .product,
+    .nemoone-chador {
+        width: 200px;
     }
 
-    .main-nav {
-        display: none; 
-        flex-direction: column; 
-        align-items: flex-start;
-        width: 100%;
-        padding: 0;
-    }
-
-   
-    .main-nav a, .dropdown-trigger {
-        width: 100%;
-        padding: 15px 30px;
-        border-bottom: 1px solid rgba(47, 58, 38, 0.1);
-        box-sizing: border-box;
-    }
-
-    .menu-toggle-checkbox:checked ~ .main-nav {
-        display: flex; 
-        animation: slideDown 0.3s ease forwards;
+    .Categories {
+        width: 150px;
     }
 }
 .Hero{
@@ -606,16 +657,29 @@ header {
     display: none; 
     cursor: pointer;
     background-color: #D8C9A8;
-    padding: 10px 20px;
+    padding: 8px;
+    border-radius: 8px;
     color: #2F3A26;
-    text-align: right;
 }
 
 .hamburger-btn svg {
-    width: 32px;
-    height: 32px;
+    width: 28px;
+    height: 28px;
+    display: block;
 }
-@keyframes slideDown {
+@keyframes slideDown { 
     from { opacity: 0; transform: translateY(-10px); }
     to { opacity: 1; transform: translateY(0); }
+}
+
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+.menu-toggle-checkbox {
+    display: none;
 }
