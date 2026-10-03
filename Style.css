@@ -20,6 +20,7 @@ header {
     top: 0; 
     z-index: 1000; 
     background-color: white; 
+    
 }
 .logo-container {
     display: flex;
@@ -271,16 +272,23 @@ header {
         display: none;
     }
 
-    .cart {
-        width: 40px;
-        height: 40px;
-        padding: 0;
-        border-radius: 50%;
-        min-width: 40px;
+    .cart,
+    .hamburger-btn,
+    .search-btn {
+        width: 44px;
+        height: 44px;
+        min-width: 44px;
+        min-height: 44px;
+    }
+
+    .add-to-cart {
+        width: 44px;
+        height: 44px;
+        font-size: 20px;
     }
 
     .hamburger-btn {
-        display: flex;
+        display: flex !important;
         align-items: center;
         justify-content: center;
     }
@@ -300,6 +308,11 @@ header {
         z-index: 999;
     }
 
+    
+    .menu-toggle-checkbox:checked ~ .main-nav {
+        display: flex !important;
+        animation: slideDown 0.3s ease forwards;
+    }
     .main-nav a,
     .dropdown-trigger {
         width: 100%;
@@ -321,10 +334,6 @@ header {
     }
 
 
-    .menu-toggle-checkbox:checked ~ .main-nav {
-        display: flex;
-        animation: slideDown 0.3s ease forwards;
-    }
 
     .Hero {
         flex-direction: column;
@@ -516,9 +525,8 @@ header {
     cursor: pointer;
     transition:box-shadow, 0.2s transform 0.2s;
     background: #4a553651;
-    backdrop-filter: blur(10px); /* تار کردن کوه‌های پشت کارت */
-    -webkit-backdrop-filter: blur(10px); /* برای سازگاری با مرورگر سافاری */
-    border: 1px solid rgba(255, 255, 255, 0.6); /* یک حاشیه روشن که لبه شیشه را تداعی می‌کند */
+    backdrop-filter: blur(10px); 
+    -webkit-backdrop-filter: blur(10px); 
     border-radius: 20px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
