@@ -16,7 +16,7 @@ body {
     font-family: 'Vazirmatn', Tahoma, sans-serif;;
 }
 header {
-    position: sticky;/*ممکنه ببعدا fixed بشه*/
+    position: sticky;
     top: 0; 
     z-index: 1000; 
     background-color: white; 
@@ -149,6 +149,9 @@ header {
     color: #D8C9A8;
     cursor: pointer;
 }
+.cart:hover{
+    background-color: #686148;
+}
 .cart-count {
     display: inline-flex;
     align-items: center;
@@ -232,136 +235,7 @@ header {
     visibility: visible; 
     transform: translateY(0); 
 }
-@media (max-width: 768px) {
 
-    .logo-container {
-        padding: 12px 16px;
-        gap: 12px;
-    }
-
-    .logo-text {
-        font-size: 18px;
-    }
-
-    .logo-mark {
-        width: 56px;
-        height: 40px;
-    }
-
-    #search-box {
-        display: none;
-    }
-
-    .search {
-        width: auto;
-        flex-grow: 0;
-    }
-
-    .search-btn {
-        position: static;
-        transform: none;
-        background-color: #f1c40f;
-        color: #4F5B2A;
-        border-radius: 50%;
-        width: 40px;
-        height: 40px;
-    }
-
-    .cart .btn-text,
-    .cart .cart-count {
-        display: none;
-    }
-
-    .cart,
-    .hamburger-btn,
-    .search-btn {
-        width: 44px;
-        height: 44px;
-        min-width: 44px;
-        min-height: 44px;
-    }
-
-    .add-to-cart {
-        width: 44px;
-        height: 44px;
-        font-size: 20px;
-    }
-
-    .hamburger-btn {
-        display: flex !important;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .main-nav {
-        display: none;
-        flex-direction: column;
-        align-items: stretch;
-        width: 100%;
-        padding: 0;
-        background-color: #D8C9A8;
-        position: absolute;
-        top: 100%;
-        right: 0;
-        left: 0;
-        box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-        z-index: 999;
-    }
-
-    
-    .menu-toggle-checkbox:checked ~ .main-nav {
-        display: flex !important;
-        animation: slideDown 0.3s ease forwards;
-    }
-    .main-nav a,
-    .dropdown-trigger {
-        width: 100%;
-        padding: 16px 24px;
-        border-bottom: 1px solid rgba(47, 58, 38, 0.12);
-        box-sizing: border-box;
-        justify-content: flex-start;
-    }
-
-    .dropdown-menu {
-        position: static;
-        opacity: 1;
-        visibility: visible;
-        transform: none;
-        box-shadow: none;
-        background-color: #c9be9a;
-        border-radius: 0;
-        display: none;
-    }
-
-
-
-    .Hero {
-        flex-direction: column;
-        margin: 12px 8px 24px;
-        gap: 12px;
-    }
-
-    .banner1,
-    .banner2 {
-        width: 100%;
-        height: 260px;
-        padding: 24px 20px;
-    }
-
-    .banners {
-        flex-direction: column;
-        gap: 12px;
-    }
-
-    .product,
-    .nemoone-chador {
-        width: 200px;
-    }
-
-    .Categories {
-        width: 150px;
-    }
-}
 .Hero{
     gap: 20px;
     display: flex;
@@ -489,7 +363,7 @@ header {
     padding: 30px 40px;
     color: white;
    background-image: linear-gradient(to left, rgb(23, 44, 28), rgb(74, 85, 54));
-   backdrop-filter: blur(10px); /* تار کردن کوه‌های پشت کارت */
+   backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
    cursor: pointer;
 }
@@ -657,9 +531,7 @@ header {
 .back-to-top:hover {
     transform: translateY(-5px);
 }
-.menu-toggle-checkbox {
-    display: none; 
-}
+
 
 .hamburger-btn {
     display: none; 
@@ -688,6 +560,261 @@ header {
     flex-shrink: 0;
 }
 
-.menu-toggle-checkbox {
+
+.mobile-menu{
     display: none;
+}
+.mobile-menu summary{
+    list-style: none;
+    cursor: pointer;
+}
+.mobile-menu summary::-webkit-details-marker {
+    display: none;}
+.hamburger-btn{
+    display: none;
+    cursor: pointer;
+    background-color: #D8C9A8;
+    padding: 8px;
+    border-radius: 8px;
+    color: #2F3A26;
+}
+.hamburger-btn svg {
+    width: 28px;
+    height: 28px;
+    display: block;
+}
+@media (max-width: 768px) {
+
+    .logo-container {
+        padding: 12px 16px;
+        gap: 12px;
+    }
+
+    .logo-text {
+        font-size: 18px;
+    }
+
+    .logo-mark {
+        width: 56px;
+        height: 40px;
+    }
+
+    #search-box {
+        display: none;
+    }
+
+    .search {
+        width: auto;
+        flex-grow: 0;
+    }
+
+    .search-btn {
+        position: static;
+        transform: none;
+        background-color: #f1c40f;
+        color: #4F5B2A;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+    }
+
+    .cart .btn-text,
+    .cart .cart-count {
+        display: none;
+    }
+
+    .cart,
+    .hamburger-btn,
+    .search-btn {
+        width: 44px;
+        height: 44px;
+        min-width: 44px;
+        min-height: 44px;
+    }
+
+    .add-to-cart {
+        width: 44px;
+        height: 44px;
+        font-size: 20px;
+    }
+
+    .hamburger-btn {
+        display: flex ;
+        align-items: center;
+        justify-content: center;
+        height: 44px;
+        width: 44px;
+        min-width: 44px;
+        min-height: 44px;
+    }
+
+    .main-nav {
+        display: none !important;
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+        padding: 0;
+        background-color: #D8C9A8;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        z-index: 999;
+        
+    }
+    .mobile-nav-links {
+        display: flex;
+        flex-direction: column;
+        background-color: #D8C9A8;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        z-index: 999;
+    }
+    .mobile-nav-links a {
+        padding: 16px 24px;
+        text-decoration: none;
+        color: #4F5B2A;
+        font-weight: bold;
+        border-bottom: 1px solid rgba(47, 58, 38, 0.12);
+    }
+
+    .mobile-nav-links a:hover {
+        background-color: #b4a97c;
+    }
+
+    .main-nav a,
+    .dropdown-trigger {
+        width: 100%;
+        padding: 16px 24px;
+        border-bottom: 1px solid rgba(47, 58, 38, 0.12);
+        box-sizing: border-box;
+        justify-content: flex-start;
+    }
+
+    .dropdown-menu {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        box-shadow: none;
+        background-color: #c9be9a;
+        border-radius: 0;
+        display: none;
+    }
+
+
+
+    .Hero {
+        flex-direction: column;
+        margin: 12px 8px 24px;
+        gap: 12px;
+    }
+
+    .banner1,
+    .banner2 {
+        width: 100%;
+        height: 260px;
+        padding: 24px 20px;
+    }
+
+    .banners {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .product,
+    .nemoone-chador {
+        width: 200px;
+    }
+
+    .Categories {
+        width: 150px;
+    }
+    .mobile-menu{display: block;}
+    .mobile-nav-links a {
+        padding: 16px 24px;
+        text-decoration: none;
+        color: #4F5B2A;
+        font-weight: bold;
+        border-bottom: 1px solid rgba(47, 58, 38, 0.12);
+    }
+
+    .mobile-nav-links a:hover {
+        background-color: #b4a97c;
+    }
+}
+/*tablet area*/
+@media (max-width : 1200px) and (min-width:769px ){
+    .logo-container{
+        padding: 20px 26px;
+        gap: 17px;
+    }
+    .logo-text{
+        font-size: 23px;
+    }
+    .logo-mark{
+        width: 62px;
+        height: 46px;
+    }
+    #search-box{
+        display: block;
+        height: 44px;
+        font-size: 15px;
+    }
+    .search {
+        max-width: 280px;
+    }
+    .cart {
+        width: auto;
+        min-width: 140px;
+        height: 42px;
+        padding: 0 14px;
+        border-radius: 20px;
+    }
+    .cart .btn-text,
+    .cart .cart-count {
+        display: inline-block;
+    }
+    .hamburger-btn{
+        display: none !important;
+    }
+    .main-nav {
+        display: flex;
+        gap: 12px;
+        padding: 8px 10px;
+        font-size: 14px;
+    }
+
+    .dropdown-trigger {
+        padding: 8px 14px;
+        font-size: 14px;
+    }
+    .product,
+    .nemoone-chador {
+        width: 220px;
+    }
+
+    .Categories {
+        width: 170px;
+    }
+    .Categories img{
+        margin: 0 auto;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+    }
+    .banner1,
+    .banner2 {
+        height: 300px;
+        padding: 24px 28px;
+    }
+
+    .Hero {
+        gap: 16px;
+        margin: 16px 12px 24px;
+    }
 }
