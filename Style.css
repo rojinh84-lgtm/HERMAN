@@ -15,6 +15,20 @@ body {
     background-attachment: fixed;
     font-family: 'Vazirmatn', Tahoma, sans-serif;;
 }
+.skip-link {
+  position: absolute;
+  top: -100px;
+  right: 16px;
+  background: #2F3A26;
+  color: #F5EFE3;
+  padding: 12px 20px;
+  z-index: 10000;
+  border-radius: 8px;
+  transition: top 0.2s;
+}
+.skip-link:focus {
+  top: 16px;
+}
 header {
     position: sticky;
     top: 0; 
@@ -61,6 +75,8 @@ header {
     color: #2F3A26;
     letter-spacing: 1px;
     line-height: 1.1;
+    margin: 0;
+    padding: 0;
 }
 
 .logo-sub {
@@ -89,11 +105,21 @@ header {
     transform: translateY(-4px);
 }
 .info-nav{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    height: 64px;
+    margin: 0;
+    padding: 0 16px;
     background-color: #b4a97c;
     color: #4F5B2A;
-    text-align: center;
-    margin: 0 0;
-    padding: 10px;
+    
+}
+.gift-icon {
+    width: 28px;
+    height: 28px;
+    flex-shrink: 0;
 }
 .search {
     position: relative;
@@ -139,7 +165,7 @@ header {
     width: 200px;
     display:flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     border-radius: 20px;
     border: none;
     outline: none;
@@ -148,17 +174,31 @@ header {
     font-weight: bold;
     color: #D8C9A8;
     cursor: pointer;
-    transition: background-color 0.2s;
-}
+    transition: background-color 0.2s, transform 0.2s;
+    box-shadow: 0 6px 14px rgba(61, 71, 34, 0.25);
+} 
 .cart:hover{
     background-color: #686148;
+    transform: translateY(-2px);
+}
+.cart .btn-icon {
+    width: 32px;
+    height: 32px;
+}
+.cart-wrap {
+    display: flex;
+    align-items: center;
+    padding-inline-start: 36px;
+    border-inline-start: 1px solid #DDD6C3;
+    height: 70px;
+    flex-shrink: 0;
 }
 .cart-count {
     display: inline-flex;
     align-items: center;
-    justify-content: center;
-    width: 30px;
-    height: 30px;
+    justify-content:center;
+    width: 25px;
+    height: 25px;
     border-radius: 50%;
     background-color: rgba(211, 167, 74, 0.935);
     font-size: 15px;
@@ -246,18 +286,40 @@ header {
     margin: 20px 10px 30px 10px;
     font-weight: bold;
 }
-.Hero button{
-    border-radius: 20px;
+.Hero button {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    border-radius: 30px;
     border: none;
-    background-color: #D8C9A8;
-    padding: 10px 25px;
+    padding: 10px 20px;
+    font-family: inherit;
+    font-size: 17px;
+    font-weight: 700;
     cursor: pointer;
-    transition: background-color 0.3s, transfom 0.3;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+    transition: transform 0.2s, opacity 0.3s;
 }
-.Hero button:hover{
-    background-color: #686148;
-    color: #C9C3AF;
-    transform: translateY(-2px);
+
+.Hero button svg {
+    width: 20px;
+    height: 20px;
+}
+
+.Hero button:hover {
+    transform: translateX(-4px);
+    opacity: 0.92;
+}
+
+.btn-light {
+    background-color: #F3E6C4;
+    color: #2F3A26;
+}
+
+.btn-dark {
+    background-color: #2F3A26;
+    color: #F7F2E8;
+    border: 2px solid rgba(243, 230, 196, 0.4) !important;
 }
 .banner1,
 .banner2 {
@@ -298,9 +360,16 @@ header {
     display: flex; 
     gap: 15px; 
     overflow-x: auto; 
+    scroll-snap-type: mandatory;
     padding-bottom: 15px; 
 }
+.product,
+.tent-article {
+    scroll-snap-align: start;        /* ← هر کارت از اولش چفت بشه */
+    flex-shrink: 0;
+}
 .product{
+    position: relative;
     flex-shrink: 0;
     text-align: center;
     width: 250px;
@@ -313,6 +382,24 @@ header {
     cursor: pointer;
     transition:box-shadow, 0.2s transform 0.2s;
 }
+.discount-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;           
+    width: 40px;
+    height: 40px;
+    background-color: #9f291c;  
+    color: white;
+    display: flex;
+    border-radius: 50%;         
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    padding: 0;
+    font-size: 14px;
+    font-weight: bold;
+    z-index: 2;
+}
 .product:hover{
     background: #4a553670;
     box-shadow: 2px 1px 0 #8A8A7A;
@@ -322,8 +409,9 @@ header {
     width: 210px;
     height: 210px;
     object-fit: cover;
-    padding: 10px;
+    width: 100%;
     border-radius: 20px;
+    display: block;
 }
 .discount-price{
     text-decoration:line-through ;
@@ -384,20 +472,24 @@ header {
 }
 
 .category img{
-    height: 150px;
-    width: 150px;
+    height: 120px;
+    width: 120px;
     padding: 10px;
+    object-fit: contain;
 }
+.Categories h3 {
+    margin: 0;
+    font-size: 1.1rem;
+}
+
 .Categories{
     flex-shrink: 0;
     text-align: center;
     width: 200px;
-    
     min-height: 200px;
     border: 1px solid #2F3A26;
     border-radius: 20px;
     padding: 10px 10px 20px 10px;
-    
     cursor: pointer;
     transition:box-shadow, 0.2s transform 0.2s;
     background: #4a553651;
@@ -405,16 +497,23 @@ header {
     -webkit-backdrop-filter: blur(10px); 
     border-radius: 20px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 .Categories:hover{
     background: #4a553670;
-    box-shadow: 2px 1px 0 #8A8A7A;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
     transform: translateY(3px);
 }
 #koole{
     filter: brightness(0);
 }
-.nemoone-chador{
+.tent-article{
+    position: relative;
     flex-shrink: 0;
     text-align: center;
     width: 250px;
@@ -427,7 +526,7 @@ header {
     cursor: pointer;
     transition:box-shadow, 0.2s transform 0.2s;
 }
-.nemoone-chador div{
+.tent-article div{
    
     display: flex;
     justify-content: space-around; 
@@ -435,7 +534,7 @@ header {
     padding: 0 15px;
 
 }
-.offer, .category, .chador {
+.offer, .category, .tent {
     margin: 20px 10px 30px 10px;
     color: #2F3A26; 
 }
@@ -443,7 +542,7 @@ header {
 .offer h2, .titels {
     margin: 20px 0;
 }
-.nemoone-chador:hover{
+.tent-article:hover{
     background: #4a553670;
     box-shadow: 2px 1px 0 #8A8A7A;
     transform: translateY(3px);
@@ -465,7 +564,9 @@ header {
     padding-bottom: 30px;
     border-bottom: 1px solid #4A5536;
 }
-
+section[id] {
+    scroll-margin-top: 140px; 
+}
 .footer-section {
     flex: 1;
     min-width: 250px;
@@ -729,7 +830,7 @@ header {
     }
 
     .product,
-    .nemoone-chador {
+    .tent-article {
         width: 200px;
     }
 
@@ -747,6 +848,13 @@ header {
 
     .mobile-nav-links a:hover {
         background-color: #b4a97c;
+    }
+    .prouduct-pic {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        aspect-ratio: 1 / 1;
+        object-fit: contain;
     }
 }
 /*tablet area*/
@@ -796,7 +904,7 @@ header {
         font-size: 14px;
     }
     .product,
-    .nemoone-chador {
+    .tent-article {
         width: 220px;
     }
 
